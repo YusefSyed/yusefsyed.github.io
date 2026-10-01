@@ -18,8 +18,9 @@ There are no packages to install and no build step.
 
 ## Prepare GitHub Pages
 
-After this scaffold is placed in the intended GitHub repository, select
-**Settings → Pages → Build and deployment → Source → GitHub Actions**.
+The repository is created at https://github.com/YusefSyed/yusefsyed.github.io.
+Pages is configured to use **GitHub Actions** as its publishing source.
+To check this, open **Settings → Pages → Build and deployment → Source**.
 Deployment is manual: open **Actions → Deploy GitHub Pages → Run workflow**
 and select the branch containing the reviewed scaffold. Pushes do not trigger
 deployment. A successful deployment reports its URL in the `github-pages`
