@@ -1,9 +1,9 @@
-# Yusef Syed — Research notes
+# Yusef Syed — personal page
 
 Minimal static GitHub Pages scaffold intended for `YusefSyed/yusefsyed.github.io`.
-The homepage contains only a name, a research-notes label, and a preparation
-notice. It has no biography, posts, research results, mentor names, or meeting
-material. Research content can be added later after review.
+The homepage is a one-screen card: name, one line on what I work on, and links
+to Scopehaven, effect-tracer, ToolEffectBench, GitHub, the résumé PDF and
+LinkedIn. No posts or research results yet; those can be added later after review.
 
 ## Preview locally
 

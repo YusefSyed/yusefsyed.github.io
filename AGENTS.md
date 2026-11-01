@@ -3,9 +3,9 @@
 ## Purpose and scope
 
 This repository prepares Yusef Syed's static research-notes site for GitHub
-Pages. The current homepage is a placeholder. Do not add a biography, sample
-posts, research claims, mentor names, or meeting material without a later
-content request. There is no dependency installation or build step.
+Pages. The homepage is a one-screen card (name, one line, project links), added Nov 1 2026
+on Yusef's request. Do not add posts, research claims, mentor names, or meeting
+material without a later content request. There is no dependency installation or build step.
 
 ## Authority order
 
@@ -19,8 +19,8 @@ Do not infer completed research or authorization to publish from plans.
 
 | Area | First files | Boundary |
 |---|---|---|
-| Homepage | `site/index.html`, `site/assets/styles.css` | Placeholder text only; responsive semantic HTML |
-| Crawling | `site/index.html`, `site/robots.txt` | Retain noindex and crawler exclusion until content is ready |
+| Homepage | `site/index.html`, `site/assets/styles.css` | Name, one line, project links; responsive semantic HTML |
+| Crawling | `site/index.html`, `site/robots.txt` | Indexable since Nov 1 2026 |
 | Deployment | `.github/workflows/pages.yml` | Manual dispatch only; artifact contains only `site/` |
 | Setup | `README.md` | Intended remote is `YusefSyed/yusefsyed.github.io` |
 
