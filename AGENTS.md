@@ -57,7 +57,7 @@ Do not infer completed research or authorization to publish from plans.
 |---|---|---|
 | Missing styles | Stylesheet link, `site/assets/styles.css` | HTTP response for `/assets/styles.css` |
 | Rich results or validators reject the page | JSON-LD block in `site/index.html` | Extract the block and parse it with `python3 -c "import json,sys; json.load(sys.stdin)"` |
-| Numbers disagree between files | `site/index.html`, `site/llms.txt`, `site/llms-full.txt` | `grep -n "17 merged\|5,628\|26 of 44\|19 of 20" site/*` |
+| Numbers disagree between files | `site/index.html`, `site/llms.txt`, `site/llms-full.txt` | `grep -n "19 merged\|5,628\|26 of 44\|19 of 20" site/*` |
 | Tally marks miscount | `.ticks` in `site/assets/styles.css`, `--g` and `--r` on each `.ticks` span | Marks = `--g` x 10 + `--r` (97, 13, 10) |
 | Horizontal scroll on a phone | `.ticks` width, `.ledger` table | Preview at 360px wide |
 | Unexpected published content | Workflow artifact path, `site/` inventory | Confirm only reviewed files are inside `site/` |

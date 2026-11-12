@@ -34,7 +34,7 @@ Quick facts:
 
 ## Open source
 
-17 merged pull requests in 8 outside repos.
+19 merged pull requests in 9 outside repos.
 
 - [google/adk-python #8074](https://github.com/google/adk-python/pull/8074): Google ADK. Fixed an eval that scored a matching no-argument tool call as a miss. Merged through Google's internal import as commit 6e448cf.
 - [microsoft/PyRIT #2537](https://github.com/microsoft/PyRIT/pull/2537): Microsoft PyRIT. Extended the package-hallucination scenario to Dart, Perl and Raku, with tests.

@@ -86,19 +86,20 @@ Swift, team of four.
 
 ## Open source
 
-17 merged pull requests in 8 outside repos.
+19 merged pull requests in 9 outside repos.
 
 | Repository | Merged | Change | Pull request |
 |---|---|---|---|
 | Google ADK | 1 | Fixed an eval that scored a matching no-argument tool call as a miss. Merged through Google's internal import as commit 6e448cf. | https://github.com/google/adk-python/pull/8074 |
+| Hugging Face transformers | 1 | Fixed tool-schema generation (get_json_schema) cutting multi-line argument descriptions short, with tests. | https://github.com/huggingface/transformers/pull/50606 |
 | Microsoft PyRIT | 1 | Extended the package-hallucination scenario to Dart, Perl and Raku, with tests. | https://github.com/microsoft/PyRIT/pull/2537 |
 | Microsoft Agent Lightning | 4 | Four reliability fixes. | for example https://github.com/microsoft/agent-lightning/pull/584 |
 | W&B RAI Toolkit | 5 | Five evaluation fixes. | for example https://github.com/wandb/rai-toolkit/pull/106 |
 | Apache Arrow | 1 | Four PyArrow slice APIs accept Arrow integer scalars. | https://github.com/apache/arrow/pull/51160 |
 | Inspect Scout | 3 | Three merged pull requests. | for example https://github.com/meridianlabs-ai/inspect_scout/pull/586 |
 | Kornia | 1 | One merged pull request. | https://github.com/kornia/kornia/pull/4185 |
-| Sentience Governor | 1 | One merged pull request. | https://github.com/crescerelabs/sentience-governor/pull/25 |
-| Total, 8 repositories | 17 | | |
+| Sentience Governor | 2 | Two merged pull requests. | for example https://github.com/crescerelabs/sentience-governor/pull/28 |
+| Total, 9 repositories | 19 | | |
 
 ## Papers
 
@@ -151,7 +152,7 @@ Scopehaven is a CLI and GitHub Action that catches an AI agent acting on the wro
 
 ### What open-source work has Yusef Syed done?
 
-He has 17 merged pull requests in 8 outside repos: Google ADK, Microsoft PyRIT, Microsoft Agent Lightning, W&B RAI Toolkit, Apache Arrow, Inspect Scout, Kornia and Sentience Governor.
+He has 19 merged pull requests in 9 outside repos: Google ADK, Hugging Face transformers, Microsoft PyRIT, Microsoft Agent Lightning, W&B RAI Toolkit, Apache Arrow, Inspect Scout, Kornia and Sentience Governor.
 
 ### How do I contact Yusef Syed?
 
