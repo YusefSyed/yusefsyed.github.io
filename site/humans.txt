@@ -1,0 +1,12 @@
+/* TEAM */
+Yusef Syed, software engineer (AI agent security and evals)
+Site: https://yusefsyed.github.io/
+Contact: yusefmsyed@gmail.com
+GitHub: https://github.com/YusefSyed
+Location: Toronto, Ontario, Canada
+
+/* SITE */
+Last update: 2026/11/12
+Language: English
+Built with: plain HTML and CSS, no build step, no JavaScript, no trackers
+Hosting: GitHub Pages

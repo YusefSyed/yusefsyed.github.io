@@ -1,0 +1,166 @@
+# Yusef Syed
+
+Software engineer, AI agent security and evals. Founder of Scopehaven. Toronto, Ontario.
+
+Source: https://yusefsyed.github.io/ (last updated 2026-11-12). This file is the full text of that page in Markdown.
+
+> I build tools that check what an AI agent actually did, not what it said.
+
+Yusef Syed is a software engineer working on AI agent security and evals. He is the founder of Scopehaven and a first-year student at the University of Toronto, based in Toronto, Ontario. He is looking for a full-time startup role from January 2027 anywhere in the U.S. (San Francisco, New York or remote) as a security engineer, evals engineer, AI red team engineer or AI safety research engineer, and is also open to Summer 2027 internships. He is a U.S. and Canadian citizen and needs no visa sponsorship.
+
+One ToolEffectBench task, what agents did and what they reported:
+
+- 97 forbidden publish actions made by agents, with no instruction to obey
+- 13 or more of them denied in the agents' final reports
+- 10 missed by a final-state-only check, because a later revoke undid them
+
+The benchmark covers 17 models and 5,628 scored runs. Paper: https://doi.org/10.5281/zenodo.23966727
+
+## Quick facts
+
+- Role: Founder & Software Engineer, AI Security at Scopehaven
+- Focus: AI agent security, LLM evaluation (evals), AI red teaming, prompt injection
+- Location: Toronto, Ontario, Canada
+- Work authorization: U.S. and Canadian citizen. No visa sponsorship needed.
+- Available from: January 2027 for a full-time startup role anywhere in the U.S. (San Francisco, New York or remote). Also open to Summer 2027 internships.
+- Education: University of Toronto, B.Sc., Mathematical & Physical Sciences. First year, intended Math and CS double major, expected May 2030.
+- Contact: yusefmsyed@gmail.com
+
+## About
+
+My work checks AI agents against records instead of their own reports. ToolEffectBench scores an agent by what it changed in a sandbox's database. Scopehaven judges an agent from the app's own records. effect-tracer signs what a Linux process tree did into a hash chain.
+
+I started Scopehaven in October 2026 and work on it solo. It is pre-revenue. I am also a first-year student at the University of Toronto, with an intended double major in Math and CS.
+
+I build with AI coding agents that I direct and review. I publish the results that don't flatter my own tools too: one of my two papers is a null result, and in Agent Eval Mutation Lab I withheld improvement claims after five of six validity gates failed.
+
+## Work
+
+### ToolEffectBench
+
+Python, Inspect AI, Docker.
+
+A benchmark that scores prompt injection on tool-using LLM agents by what the agent changed in a network-less sandbox's database, not by its transcript.
+
+17 models, 5,628 scored runs. On one task agents made 97 forbidden publish actions with no instruction to obey. Their final reports denied at least 13, and a final-state-only check missed 10 that a later revoke undid.
+
+- Code: https://github.com/YusefSyed/tool-effect-bench
+- Paper: https://doi.org/10.5281/zenodo.23966727
+
+### Scopehaven
+
+Node.js. Open edition v0.7.0, Apache-2.0.
+
+A CLI and GitHub Action that catches an AI agent acting on the wrong account, tenant or refund, judged from the app's own records.
+
+On its own synthetic test app, the vulnerable build fails 26 of 44 checks and the repaired build passes 44 of 44.
+
+- Site: https://scopehaven.dev
+- Open edition: https://github.com/YusefSyed/scopehaven-oss
+
+### effect-tracer
+
+Rust, Linux ptrace/seccomp, Ed25519.
+
+Signs a process tree's file writes, connects, DNS and execs into a hash chain.
+
+Caught 19 of 20 seeded bypasses at 1.1 to 1.9x overhead.
+
+- Code: https://github.com/YusefSyed/effect-tracer
+
+### Agent Eval Mutation Lab
+
+Python.
+
+A 624-trial study across two local models. Five of six validity gates failed, so improvement claims were withheld.
+
+- Code: https://github.com/YusefSyed/agent-eval-mutation-lab
+
+### Providence
+
+Swift, team of four.
+
+1st Place, Aramco Americas Best Beginner Hack, Hack the North 2026.
+
+- Devpost: https://devpost.com/software/providence-tn6m4h
+
+## Open source
+
+17 merged pull requests in 8 outside repos.
+
+| Repository | Merged | Change | Pull request |
+|---|---|---|---|
+| Google ADK | 1 | Fixed an eval that scored a matching no-argument tool call as a miss. Merged through Google's internal import as commit 6e448cf. | https://github.com/google/adk-python/pull/8074 |
+| Microsoft PyRIT | 1 | Extended the package-hallucination scenario to Dart, Perl and Raku, with tests. | https://github.com/microsoft/PyRIT/pull/2537 |
+| Microsoft Agent Lightning | 4 | Four reliability fixes. | for example https://github.com/microsoft/agent-lightning/pull/584 |
+| W&B RAI Toolkit | 5 | Five evaluation fixes. | for example https://github.com/wandb/rai-toolkit/pull/106 |
+| Apache Arrow | 1 | Four PyArrow slice APIs accept Arrow integer scalars. | https://github.com/apache/arrow/pull/51160 |
+| Inspect Scout | 3 | Three merged pull requests. | for example https://github.com/meridianlabs-ai/inspect_scout/pull/586 |
+| Kornia | 1 | One merged pull request. | https://github.com/kornia/kornia/pull/4185 |
+| Sentience Governor | 1 | One merged pull request. | https://github.com/crescerelabs/sentience-governor/pull/25 |
+| Total, 8 repositories | 17 | | |
+
+## Papers
+
+### ToolEffectBench: Scoring Prompt Injection on Tool-Using Agents from Persisted State
+
+Yusef Syed, sole author. Zenodo, 2026. DOI 10.5281/zenodo.23966727. arXiv submission in review.
+https://doi.org/10.5281/zenodo.23966727
+
+Scores prompt injection on tool-using LLM agents by what the agent changed in a network-less sandbox's database, not by its transcript. 17 models, 5,628 scored runs.
+
+### Checks for Checkers: Sealed Paired Comparisons of AI Agent Verification Tools
+
+Yusef Syed, sole author. Zenodo, 2026. DOI 10.5281/zenodo.23966747.
+https://doi.org/10.5281/zenodo.23966747
+
+A blind, timestamped comparison on 96 planted-defect and 96 clean cases. My own tool caught 83 and an open-source framework caught 88, with no false alarms (p = 0.30). Published as a null result.
+
+## Security research
+
+I have filed 15 private security advisories and 2 HackerOne reports with 10 open-source projects, covering authorization, credential and data-exposure flaws. Each one was reproduced 3 of 3 by an automated harness.
+
+As of November 2026, two are triaged and the others are awaiting triage. The projects are not named here because the reports are private.
+
+## Skills and tools
+
+- Languages and tools: Python, Rust, TypeScript, Node.js, SQL, Inspect AI, PyRIT, Docker, Linux (ptrace, seccomp), PostgreSQL, MCP, GitHub Actions (CI/CD)
+- Focus areas: AI security, AI agent security, LLM evaluation (evals), agent benchmarks, AI red teaming, prompt injection, LLM security, application security (AppSec), access-control testing, vulnerability research
+
+## FAQ
+
+### What does Yusef Syed work on?
+
+Yusef Syed works on AI agent security and evals. He builds tools that check what an AI agent actually did, not what it said, including the ToolEffectBench benchmark, the Scopehaven CLI and GitHub Action, and effect-tracer.
+
+### Is Yusef Syed open to work, and where?
+
+Yes. He is looking for a full-time startup role from January 2027 anywhere in the U.S. (San Francisco, New York or remote) as a security engineer, evals engineer, AI red team engineer or AI safety research engineer. He is also open to Summer 2027 internships.
+
+### Does Yusef Syed need visa sponsorship?
+
+No. He is a U.S. and Canadian citizen and does not need visa sponsorship.
+
+### What is ToolEffectBench?
+
+ToolEffectBench is a benchmark that scores prompt injection on tool-using LLM agents by what the agent changed in a network-less sandbox's database, not by its transcript. It covers 17 models and 5,628 scored runs, and Yusef Syed is the sole author of its paper, published on Zenodo in 2026.
+
+### What is Scopehaven?
+
+Scopehaven is a CLI and GitHub Action that catches an AI agent acting on the wrong account, tenant or refund, judged from the app's own records. Yusef Syed started it in October 2026 and works on it solo. The open edition is on GitHub under the Apache-2.0 license.
+
+### What open-source work has Yusef Syed done?
+
+He has 17 merged pull requests in 8 outside repos: Google ADK, Microsoft PyRIT, Microsoft Agent Lightning, W&B RAI Toolkit, Apache Arrow, Inspect Scout, Kornia and Sentience Governor.
+
+### How do I contact Yusef Syed?
+
+Email yusefmsyed@gmail.com. He is also on GitHub as YusefSyed, on LinkedIn, and on X as @yoosefseed.
+
+## Contact
+
+- Email: yusefmsyed@gmail.com
+- GitHub: https://github.com/YusefSyed
+- LinkedIn: https://www.linkedin.com/in/yusef-syed-4b811a289/
+- X: https://x.com/yoosefseed
+- Résumé (PDF): https://github.com/YusefSyed/YusefSyed/blob/main/resume/Yusef_Syed_Resume.pdf

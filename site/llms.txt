@@ -1,0 +1,54 @@
+# Yusef Syed
+
+> Yusef Syed is a software engineer working on AI agent security and evals. He is the founder of Scopehaven and a first-year student at the University of Toronto, based in Toronto, Ontario. He builds tools that check what an AI agent actually did, not what it said. He is looking for a full-time startup role from January 2027 anywhere in the U.S. (San Francisco, New York or remote) and is also open to Summer 2027 internships. He is a U.S. and Canadian citizen and needs no visa sponsorship.
+
+Quick facts:
+
+- Role: Founder & Software Engineer, AI Security at Scopehaven (solo, started October 2026)
+- Focus: AI agent security, LLM evaluation (evals), AI red teaming, prompt injection
+- Roles sought: security engineer, evals engineer, AI red team engineer or AI safety research engineer
+- Location: Toronto, Ontario, Canada
+- Work authorization: U.S. and Canadian citizen; no visa sponsorship needed
+- Available from: January 2027 (full-time startup role in the U.S.); also open to Summer 2027 internships
+- Education: University of Toronto, B.Sc., Mathematical & Physical Sciences, intended Math and CS double major, expected May 2030
+- Contact: yusefmsyed@gmail.com
+
+## Site
+
+- [Home page](https://yusefsyed.github.io/): about, projects, open source, papers, security research, skills, FAQ, contact
+- [Full text of the home page in Markdown](https://yusefsyed.github.io/llms-full.txt): everything on the home page as plain text
+
+## Projects
+
+- [ToolEffectBench](https://github.com/YusefSyed/tool-effect-bench): benchmark that scores prompt injection on tool-using LLM agents by what the agent changed in a network-less sandbox's database, not by its transcript. 17 models, 5,628 scored runs. Python, Inspect AI, Docker.
+- [Scopehaven](https://scopehaven.dev): CLI and GitHub Action that catches an AI agent acting on the wrong account, tenant or refund, judged from the app's own records.
+- [Scopehaven open edition](https://github.com/YusefSyed/scopehaven-oss): Node.js, Apache-2.0, v0.7.0. On its own synthetic test app the vulnerable build fails 26 of 44 checks and the repaired build passes 44 of 44.
+- [effect-tracer](https://github.com/YusefSyed/effect-tracer): signs a process tree's file writes, connects, DNS and execs into a hash chain. Caught 19 of 20 seeded bypasses at 1.1 to 1.9x overhead. Rust, Linux ptrace/seccomp, Ed25519.
+- [Agent Eval Mutation Lab](https://github.com/YusefSyed/agent-eval-mutation-lab): 624-trial study across two local models; five of six validity gates failed, so improvement claims were withheld. Python.
+- [Providence](https://devpost.com/software/providence-tn6m4h): 1st Place, Aramco Americas Best Beginner Hack, Hack the North 2026. Swift, team of four.
+
+## Papers
+
+- [ToolEffectBench: Scoring Prompt Injection on Tool-Using Agents from Persisted State](https://doi.org/10.5281/zenodo.23966727): Yusef Syed, sole author, Zenodo, 2026. arXiv submission in review.
+- [Checks for Checkers: Sealed Paired Comparisons of AI Agent Verification Tools](https://doi.org/10.5281/zenodo.23966747): Yusef Syed, sole author, Zenodo, 2026. Blind, timestamped comparison on 96 planted-defect and 96 clean cases; published as a null result.
+
+## Open source
+
+17 merged pull requests in 8 outside repos.
+
+- [google/adk-python #8074](https://github.com/google/adk-python/pull/8074): Google ADK. Fixed an eval that scored a matching no-argument tool call as a miss. Merged through Google's internal import as commit 6e448cf.
+- [microsoft/PyRIT #2537](https://github.com/microsoft/PyRIT/pull/2537): Microsoft PyRIT. Extended the package-hallucination scenario to Dart, Perl and Raku, with tests.
+- [microsoft/agent-lightning #584](https://github.com/microsoft/agent-lightning/pull/584): Microsoft Agent Lightning. One of four reliability fixes.
+- [wandb/rai-toolkit #106](https://github.com/wandb/rai-toolkit/pull/106): W&B RAI Toolkit. One of five evaluation fixes.
+- [apache/arrow #51160](https://github.com/apache/arrow/pull/51160): Apache Arrow. Four PyArrow slice APIs accept Arrow integer scalars.
+- [meridianlabs-ai/inspect_scout #586](https://github.com/meridianlabs-ai/inspect_scout/pull/586): Inspect Scout. One of three merged pull requests.
+- [kornia/kornia #4185](https://github.com/kornia/kornia/pull/4185): Kornia. One merged pull request.
+- [crescerelabs/sentience-governor #25](https://github.com/crescerelabs/sentience-governor/pull/25): Sentience Governor. One merged pull request.
+
+## Contact
+
+- [Email](mailto:yusefmsyed@gmail.com): yusefmsyed@gmail.com
+- [GitHub](https://github.com/YusefSyed): YusefSyed
+- [LinkedIn](https://www.linkedin.com/in/yusef-syed-4b811a289/): profile
+- [X](https://x.com/yoosefseed): @yoosefseed
+- [Résumé (PDF)](https://github.com/YusefSyed/YusefSyed/blob/main/resume/Yusef_Syed_Resume.pdf): résumé on GitHub

@@ -1,2 +1,19 @@
+# https://yusefsyed.github.io/
+# Everything on this site is public and may be crawled, indexed and quoted.
+
 User-agent: *
 Allow: /
+
+# AI search, answer and training crawlers are welcome too.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://yusefsyed.github.io/sitemap.xml
