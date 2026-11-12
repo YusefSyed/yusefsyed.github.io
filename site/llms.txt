@@ -52,3 +52,4 @@ Quick facts:
 - [LinkedIn](https://www.linkedin.com/in/yusef-syed-4b811a289/): profile
 - [X](https://x.com/yoosefseed): @yoosefseed
 - [Résumé (PDF)](https://github.com/YusefSyed/YusefSyed/blob/main/resume/Yusef_Syed_Resume.pdf): résumé on GitHub
+- ORCID: https://orcid.org/0009-0003-1094-9842
