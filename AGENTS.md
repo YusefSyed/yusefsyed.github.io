@@ -45,6 +45,9 @@ Do not infer completed research or authorization to publish from plans.
   activity (hiring processes, programs applied to, funding conversations).
 - The two `PLACEHOLDER (ORCID, Google Scholar)` comments in `site/index.html`
   mark where those URLs go once the profiles exist. Never invent an ID.
+- When `site/assets/styles.css` changes, bump the `?v=` on its `<link>` in
+  `index.html` and `404.html`. GitHub Pages sends `max-age=600`, so browsers
+  otherwise keep showing the old styles.
 - When content changes, update the dates: JSON-LD `dateModified`, the footer
   `<time>`, `sitemap.xml` `lastmod`, `llms-full.txt` and `humans.txt`.
 - No analytics, trackers, cookie banners, forms, third-party embeds, web fonts
