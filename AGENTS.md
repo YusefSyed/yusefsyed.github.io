@@ -45,6 +45,11 @@ Do not infer completed research or authorization to publish from plans.
   activity (hiring processes, programs applied to, funding conversations).
 - The two `PLACEHOLDER (ORCID, Google Scholar)` comments in `site/index.html`
   mark where those URLs go once the profiles exist. Never invent an ID.
+- `site/Yusef_Syed_Resume.pdf` is the public (no-phone) résumé and must be the
+  same file as `linkedin_variant` in `career/CURRENT_RESUME.json` and
+  `resume/Yusef_Syed_Resume.pdf` in YusefSyed/YusefSyed. Replace it when the
+  résumé changes. Link to it on this site, not to GitHub's file view, which
+  shows a picture whose links cannot be clicked.
 - When `site/assets/styles.css` changes, bump the `?v=` on its `<link>` in
   `index.html` and `404.html`. GitHub Pages sends `max-age=600`, so browsers
   otherwise keep showing the old styles.
