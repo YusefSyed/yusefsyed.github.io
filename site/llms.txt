@@ -1,15 +1,17 @@
 # Yusef Syed
 
-> Yusef Syed is a software engineer working on AI agent security and evals. He is the founder of Scopehaven and a first-year student at the University of Toronto, based in Toronto, Ontario. He builds tools that check what an AI agent actually did, not what it said. He is looking for a full-time startup role from January 2027 anywhere in the U.S. (San Francisco, New York or remote) and is also open to Summer 2027 internships. He is a U.S. and Canadian citizen and needs no visa sponsorship.
+> Yusef Syed is a software engineer working on AI agent security and evals. He is the founder of Scopehaven and a first-year student at the University of Toronto, based in Toronto, Ontario. He builds tools that check what an AI agent actually did, not what it said. He has 21 merged pull requests in 10 outside repos, including Google ADK, Hugging Face transformers and Microsoft PyRIT. He is looking to join a startup team from January 2027, as a paid intern or full-time, anywhere in the U.S. (happy to relocate, or remote), and is also open to Summer 2027 internships. He is a U.S. and Canadian citizen and needs no visa sponsorship.
 
 Quick facts:
 
 - Role: Founder & Software Engineer, AI Security at Scopehaven (solo, started October 2026)
 - Focus: AI agent security, LLM evaluation (evals), AI red teaming, prompt injection
-- Roles sought: security engineer, evals engineer, AI red team engineer or AI safety research engineer
+- Roles sought: security engineer, evals engineer, AI red team engineer or AI safety research engineer; also RL environment and agent infrastructure roles
+- Open source: 21 merged pull requests in 10 outside repos, including Google ADK, Hugging Face transformers and Microsoft PyRIT
+- Security research: 25 private security advisories and 3 HackerOne reports with 19 open-source projects (three triaged as of 14 November 2026)
 - Location: Toronto, Ontario, Canada
 - Work authorization: U.S. and Canadian citizen; no visa sponsorship needed
-- Available from: January 2027 (full-time startup role in the U.S.); also open to Summer 2027 internships
+- Available from: January 2027 (paid intern or full-time at a startup, anywhere in the U.S., happy to relocate or remote); also open to Summer 2027 internships
 - Education: University of Toronto, B.Sc., Mathematical & Physical Sciences, intended Math and CS double major, expected May 2030
 - Contact: yusefmsyed@gmail.com
 
@@ -34,16 +36,18 @@ Quick facts:
 
 ## Open source
 
-19 merged pull requests in 9 outside repos.
+21 merged pull requests in 10 outside repos.
 
 - [google/adk-python #8074](https://github.com/google/adk-python/pull/8074): Google ADK. Fixed an eval that scored a matching no-argument tool call as a miss. Merged through Google's internal import as commit 6e448cf.
+- [huggingface/transformers #50606](https://github.com/huggingface/transformers/pull/50606): Hugging Face transformers. Fixed tool-schema generation (get_json_schema) cutting multi-line argument descriptions short, with tests.
+- [a2aproject/a2a-python #1442](https://github.com/a2aproject/a2a-python/pull/1442): A2A Python SDK (Agent2Agent protocol). Made the v0.3 REST compatibility layer serve DELETE for push-notification configs.
 - [microsoft/PyRIT #2537](https://github.com/microsoft/PyRIT/pull/2537): Microsoft PyRIT. Extended the package-hallucination scenario to Dart, Perl and Raku, with tests.
 - [microsoft/agent-lightning #584](https://github.com/microsoft/agent-lightning/pull/584): Microsoft Agent Lightning. One of four reliability fixes.
 - [wandb/rai-toolkit #106](https://github.com/wandb/rai-toolkit/pull/106): W&B RAI Toolkit. One of five evaluation fixes.
 - [apache/arrow #51160](https://github.com/apache/arrow/pull/51160): Apache Arrow. Four PyArrow slice APIs accept Arrow integer scalars.
 - [meridianlabs-ai/inspect_scout #586](https://github.com/meridianlabs-ai/inspect_scout/pull/586): Inspect Scout. One of three merged pull requests.
 - [kornia/kornia #4185](https://github.com/kornia/kornia/pull/4185): Kornia. One merged pull request.
-- [crescerelabs/sentience-governor #25](https://github.com/crescerelabs/sentience-governor/pull/25): Sentience Governor. One merged pull request.
+- [crescerelabs/sentience-governor #28](https://github.com/crescerelabs/sentience-governor/pull/28): Sentience Governor. One of three merged pull requests.
 
 ## Contact
 
