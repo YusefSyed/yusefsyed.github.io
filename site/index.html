@@ -8,8 +8,8 @@
     <meta name="author" content="Yusef Syed">
     <meta name="robots" content="index,follow,max-image-preview:large">
     <link rel="canonical" href="https://yusefsyed.github.io/">
-    <meta name="theme-color" content="#f1f5ee" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#101b16" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d131d" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
 
     <meta property="og:type" content="profile">
@@ -326,19 +326,23 @@
   <body>
     <a class="skip" href="#main">Skip to content</a>
 
-    <header class="site wrap">
-      <nav aria-label="Sections">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#open-source">Open source</a></li>
-          <li><a href="#papers">Papers</a></li>
-          <li><a href="#security-research">Security research</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <header class="site">
+      <div class="wrap bar">
+        <a class="brand" href="/">Yusef Syed</a>
+        <nav aria-label="Sections">
+          <ul>
+            <li><a href="#quick-facts">Overview</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#open-source">Open source</a></li>
+            <li><a href="#papers">Papers</a></li>
+            <li><a href="#security-research">Security</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn small" href="https://github.com/YusefSyed/YusefSyed/blob/main/resume/Yusef_Syed_Resume.pdf">Résumé</a>
+      </div>
     </header>
 
     <main id="main" class="wrap">
@@ -347,13 +351,18 @@
           <h1>Yusef Syed</h1>
           <p class="role">Software engineer, AI agent security and evals. Founder of Scopehaven. Toronto, Ontario.</p>
           <p class="thesis">I build tools that check what an AI agent actually did, not what it said.</p>
-          <p class="summary">Yusef Syed is a software engineer working on AI agent security and evals. He is the founder of Scopehaven and a first-year student at the University of Toronto, based in Toronto, Ontario. He has 21 merged pull requests in 10 outside repos, including Google ADK, Hugging Face transformers and Microsoft PyRIT. He is looking to join a startup team from January 2027, as a paid intern or full-time, anywhere in the U.S. (happy to relocate, or remote), as a security engineer, evals engineer, AI red team engineer or AI safety research engineer. He is also interested in RL environment and agent infrastructure roles, and open to Summer 2027 internships. He is a U.S. and Canadian citizen and needs no visa sponsorship.</p>
+          <ul class="avail" aria-label="Availability">
+            <li>Available January 2027</li>
+            <li>Paid intern or full-time</li>
+            <li>Anywhere in the U.S., relocation or remote</li>
+            <li>U.S. and Canadian citizen, no sponsorship needed</li>
+          </ul>
           <ul class="actions">
-            <li><a class="primary" href="mailto:yusefmsyed@gmail.com">Email Yusef</a></li>
+            <li><a class="btn primary" href="https://github.com/YusefSyed/YusefSyed/blob/main/resume/Yusef_Syed_Resume.pdf">View résumé (PDF)</a></li>
+            <li><a class="btn" href="mailto:yusefmsyed@gmail.com">Email Yusef</a></li>
             <li><a rel="me" href="https://github.com/YusefSyed">GitHub</a></li>
             <li><a rel="me" href="https://www.linkedin.com/in/yusef-syed-4b811a289/">LinkedIn</a></li>
             <li><a rel="me" href="https://x.com/yoosefseed">X</a></li>
-            <li><a href="https://github.com/YusefSyed/YusefSyed/blob/main/resume/Yusef_Syed_Resume.pdf">Résumé (PDF)</a></li>
           </ul>
         </div>
 
@@ -377,8 +386,33 @@
         </figure>
       </div>
 
+      <ul class="proof" aria-label="Highlights">
+        <li>
+          <b>21</b>
+          <span class="what"><a href="#open-source">Merged pull requests in 10 outside repos</a></span>
+          <span class="who">Google ADK, Hugging Face transformers, Microsoft PyRIT, Apache Arrow</span>
+        </li>
+        <li>
+          <b>25</b>
+          <span class="what"><a href="#security-research">Private security advisories filed</a></span>
+          <span class="who">Plus 3 HackerOne reports, with 19 open-source projects</span>
+        </li>
+        <li>
+          <b>2</b>
+          <span class="what"><a href="#papers">Papers, sole author</a></span>
+          <span class="who">ToolEffectBench and Checks for Checkers, on Zenodo</span>
+        </li>
+        <li>
+          <b>5,628</b>
+          <span class="what"><a href="#tooleffectbench">Scored agent runs across 17 models</a></span>
+          <span class="who">In ToolEffectBench, a prompt-injection benchmark</span>
+        </li>
+      </ul>
+
       <section class="sec" id="quick-facts">
         <h2>Quick facts</h2>
+        <div>
+          <p class="bio">Yusef Syed is a software engineer working on AI agent security and evals. He is the founder of Scopehaven and a first-year student at the University of Toronto, based in Toronto, Ontario. He has 21 merged pull requests in 10 outside repos, including Google ADK, Hugging Face transformers and Microsoft PyRIT. He is looking to join a startup team from January 2027, as a paid intern or full-time, anywhere in the U.S. (happy to relocate, or remote), as a security engineer, evals engineer, AI red team engineer or AI safety research engineer. He is also interested in RL environment and agent infrastructure roles, and open to Summer 2027 internships. He is a U.S. and Canadian citizen and needs no visa sponsorship.</p>
         <dl class="rows">
           <div class="row">
             <dt>Role</dt>
@@ -421,6 +455,7 @@
             <dd><a href="mailto:yusefmsyed@gmail.com">yusefmsyed@gmail.com</a></dd>
           </div>
         </dl>
+        </div>
       </section>
 
       <section class="sec" id="about">
