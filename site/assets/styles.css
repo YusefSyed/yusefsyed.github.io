@@ -607,6 +607,45 @@ code {
   font-size: 1.0625rem;
 }
 
+/* Writing */
+
+.post {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+  padding-block: 3rem;
+}
+
+.post header {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post h2 {
+  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--panel);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+
 /* 404 page */
 
 .lost {

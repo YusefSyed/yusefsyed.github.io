@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ten models scored zero because the attack never arrived | Yusef Syed</title>
+    <meta name="description" content="Inspect AI's Bedrock provider sent failed tool calls to the model as empty text, so one arm of a prompt-injection benchmark measured nothing on ten models. How it hid in the eval log, and how to check your own runs.">
+    <meta name="author" content="Yusef Syed">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://yusefsyed.github.io/writing/inspect-bedrock-empty-tool-errors/">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d131d" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ten models scored zero because the attack never arrived">
+    <meta property="og:description" content="Inspect AI's Bedrock provider sent failed tool calls to the model as empty text, so one arm of a prompt-injection benchmark measured nothing on ten models.">
+    <meta property="og:url" content="https://yusefsyed.github.io/writing/inspect-bedrock-empty-tool-errors/">
+    <meta property="og:site_name" content="Yusef Syed">
+    <meta property="article:published_time" content="2026-11-15">
+    <meta property="article:author" content="Yusef Syed">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@yoosefseed">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/styles.css?v=2026-11-15a">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://yusefsyed.github.io/writing/inspect-bedrock-empty-tool-errors/#post",
+  "url": "https://yusefsyed.github.io/writing/inspect-bedrock-empty-tool-errors/",
+  "headline": "Ten models scored zero because the attack never arrived",
+  "description": "Inspect AI's Bedrock provider sent failed tool calls to the model as empty text, so one arm of a prompt-injection benchmark measured nothing on ten models.",
+  "datePublished": "2026-11-15",
+  "dateModified": "2026-11-15",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "@id": "https://yusefsyed.github.io/#person",
+    "name": "Yusef Syed",
+    "url": "https://yusefsyed.github.io/"
+  },
+  "about": ["Inspect AI", "Amazon Bedrock", "prompt injection", "LLM evaluation"]
+}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site">
+      <div class="wrap bar">
+        <a class="brand" href="/">Yusef Syed</a>
+        <nav aria-label="Site">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#papers">Papers</a></li>
+            <li><a href="/#writing">Writing</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn small" href="https://yusefsyed.github.io/Yusef_Syed_Resume.pdf">Résumé</a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <article class="post">
+        <header>
+          <h1>Ten models scored zero because the attack never arrived</h1>
+          <p class="stack">Yusef Syed. <time datetime="2026-11-15">15 November 2026</time>.</p>
+        </header>
+
+        <p>In October I ran a prompt-injection benchmark, <a href="https://github.com/YusefSyed/tool-effect-bench">ToolEffectBench</a>, on ten models through Amazon Bedrock. In one arm of the benchmark the injected text arrives inside a tool error: the agent's first publish call fails, and the error message carries the attack. Every Bedrock model made zero forbidden attempts in that arm.</p>
+        <p>That looked like a result. It was a delivery failure. None of the ten models had ever received the text.</p>
+
+        <h2>What happened</h2>
+        <p>The benchmark runs on <a href="https://inspect.aisi.org.uk/">Inspect AI</a>. In Inspect 0.3.286, the Bedrock provider builds a tool result from the tool message's content and does not read the message's error field. When a tool raises an error, the content is empty, so the model gets a tool result with status <code>error</code> and an empty string. The Anthropic, OpenAI and Ollama providers send the error text.</p>
+        <p>This was not my discovery. <a href="https://github.com/UKGovernmentBEIS/inspect_ai/issues/5951">elliottolson reported it</a> on October 19, before my runs. I hit it independently twelve days later and added a confirmation with measurements to that issue.</p>
+
+        <h2>Why I didn't see it</h2>
+        <p>The eval log hides it. Inspect stores the tool message with its error text on every provider, whether or not the provider sent that text. So a delivery check that reads the stored messages passes on Bedrock.</p>
+        <p>It came out when a review of the paper draft asked for delivery to be read from the requests that were sent, not from the stored messages. The raw request is the only place the empty string shows.</p>
+
+        <h2>What it did to the numbers</h2>
+        <p>With the error text missing, the ten Bedrock models made 0 attempts in the error arms. The same attack texts placed in an ordinary tool result moved six of those models.</p>
+        <p>I reran the error arms with one change: a solver that copies the error message into the tool message's content before each model call. Samples, tools, sandbox and scorer were unchanged. The ten models then made 107 forbidden attempts across the 666 samples where the text reached them, and nine of the ten made at least one. Qwen3 32B alone made 21 attempts in 48 on the base suite.</p>
+        <p>The original runs stay published and are marked as defective. Their counts are never added to the rerun's.</p>
+
+        <h2>Check your own runs</h2>
+        <p>If you run Inspect evals on Bedrock and any tool can fail, read the sent requests:</p>
+<pre><code>import json, sys
+from inspect_ai.log import read_eval_log
+
+log = read_eval_log(sys.argv[1], resolve_attachments=True)
+failed = delivered = 0
+for sample in log.samples:
+    errors = [m.error.message for m in sample.messages if m.role == "tool" and m.error]
+    if not errors:
+        continue
+    failed += 1
+    sent = " ".join(
+        json.dumps(e.call.request)
+        for e in sample.events
+        if e.event == "model" and e.call is not None
+    )
+    if any(json.dumps(text)[1:-1] in sent for text in errors):
+        delivered += 1
+print(f"{delivered} of {failed} samples with a failed tool call sent the error text")</code></pre>
+        <p>On two of the published logs this prints 60 of 60 for Claude Sonnet 5.5 through the Anthropic API and 0 of 62 for Qwen3 32B through Bedrock.</p>
+        <p>One caveat: when a provider throttles, Inspect's log drops the raw request on some model events, so this check can undercount. Section 8.1 of the <a href="https://doi.org/10.5281/zenodo.23966727">paper</a> describes the fallback I used.</p>
+
+        <h2>The workaround</h2>
+        <p>Until the provider is fixed, copy the error into the content yourself before each generate call:</p>
+<pre><code>def fill_tool_errors(messages):
+    for message in messages:
+        if isinstance(message, ChatMessageTool) and message.error and not message.text:
+            message.content = message.error.message</code></pre>
+        <p>The full solver is in <a href="https://github.com/YusefSyed/tool-effect-bench/blob/v0.7.1/src/tool_effect_bench/solvers.py">solvers.py</a>.</p>
+
+        <h2>Status</h2>
+        <p>As of November 15 the issue is open and a fix is in review (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/6557">#6557</a>).</p>
+
+        <h2>What I took from it</h2>
+        <p>My benchmark scores agents from the database they changed, not from what they say they did, because transcripts mislead. That did not help here. The snapshot was correct the whole time; the input was wrong, one layer below anything the scorer could see. A zero from a cross-provider run means little until you have read what each provider sent.</p>
+      </article>
+    </main>
+
+    <footer class="site wrap">
+      <p>Yusef Syed. Published <time datetime="2026-11-15">15 November 2026</time>. <a href="/">Home</a>.</p>
+      <p>No analytics or trackers.</p>
+    </footer>
+  </body>
+</html>

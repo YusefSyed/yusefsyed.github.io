@@ -2,7 +2,7 @@
 
 Software engineer, AI agent security and evals. Founder of Scopehaven. Toronto, Ontario.
 
-Source: https://yusefsyed.github.io/ (last updated 2026-11-14). This file is the full text of that page in Markdown.
+Source: https://yusefsyed.github.io/ (last updated 2026-11-15). This file is the full text of that page in Markdown.
 
 > I build tools that check what an AI agent actually did, not what it said.
 
@@ -120,6 +120,10 @@ Yusef Syed, sole author. Zenodo, 2026. DOI 10.5281/zenodo.23966747.
 https://doi.org/10.5281/zenodo.23966747
 
 A blind, timestamped comparison on 96 planted-defect and 96 clean cases. My own tool caught 83 and an open-source framework caught 88, with no false alarms (p = 0.30). Published as a null result.
+
+## Writing
+
+- [Ten models scored zero because the attack never arrived](https://yusefsyed.github.io/writing/inspect-bedrock-empty-tool-errors/), 15 November 2026. Inspect AI's Bedrock provider sent failed tool calls to the model as empty text, so one arm of ToolEffectBench measured nothing on ten models. How it hid in the eval log, and how to check your own runs.
 
 ## Security research
 

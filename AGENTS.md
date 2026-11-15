@@ -26,7 +26,8 @@ Do not infer completed research or authorization to publish from plans.
 
 | Area | First files | Boundary |
 |---|---|---|
-| Homepage | `site/index.html`, `site/assets/styles.css` | One page, one `<h1>`, sections with stable ids (`quick-facts`, `about`, `work`, `open-source`, `papers`, `security-research`, `skills`, `faq`, `contact`); semantic HTML; light and dark; responsive from 360px |
+| Homepage | `site/index.html`, `site/assets/styles.css` | One page, one `<h1>`, sections with stable ids (`quick-facts`, `about`, `work`, `open-source`, `papers`, `writing`, `security-research`, `skills`, `faq`, `contact`); semantic HTML; light and dark; responsive from 360px |
+| Writing | `site/writing/<slug>/index.html` | One post per folder, added on Yusef's request (first: Nov 15 2026); listed in the home page `writing` section, `sitemap.xml`, `llms.txt` and `llms-full.txt`; own `BlogPosting` JSON-LD; same stylesheet |
 | Metadata | `<head>` of `site/index.html` | Title, description, canonical, Open Graph, Twitter card, `rel="me"` links, one JSON-LD `@graph` (WebSite, ProfilePage, Person, Organization, ScholarlyArticle x2, SoftwareSourceCode x3, FAQPage) |
 | Crawling | `site/robots.txt`, `site/sitemap.xml` | Everything indexable; AI crawlers named and allowed |
 | Text for models | `site/llms.txt`, `site/llms-full.txt` | Same facts as the page, in Markdown |
